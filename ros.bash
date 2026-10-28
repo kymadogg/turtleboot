@@ -168,9 +168,6 @@ grep -qxF "export LDS_MODEL=LDS-0$LIDAR # lidar config" ~/.bashrc || echo "expor
 grep -qxF "export TURTLEBOT3_MODEL=$MODEL # model" ~/.bashrc || echo "export TURTLEBOT3_MODEL=$MODEL # model" >> ~/.bashrc
 grep -qxF "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp # switch to cyclone dds" ~/.bashrc || echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp # switch to cyclone dds" >> ~/.bashrc
 
-# networking tools
-sudo apt install -y network-tools net-tools 
-
 # OPEN CR Section
 if [ "$OPENCR" = true ]; then
     sudo dpkg --add-architecture armhf  
@@ -187,6 +184,13 @@ if [ "$OPENCR" = true ]; then
     cd ./opencr_update  
     ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
 fi
+
+# networking tools
+sudo apt install -y network-tools net-tools 
+
+# other things that are used later
+sudo apt install -y raspberrypi-linux-header build-essential
+sudo apt install -y dkms mokutil
 
 # Kill sudo process
 kill %1 2>/dev/null || true
