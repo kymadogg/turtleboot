@@ -63,7 +63,7 @@ cat << "EOF"
 EOF
 
 echo "Welcome to TurtleBoot Lite!"
-echo "developed by @kmhswimgirl"
+echo "developed by @kymadogg"
 
 # confirm args
 echo "TurtleBot Name: $TURTLEBOT_NAME"

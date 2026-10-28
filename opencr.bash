@@ -19,7 +19,7 @@ cat << "EOF"
                 |_|_| |_|_|
 EOF
 echo "Welcome to TurtleBoot OPEN CR!"
-echo "developed by @kmhswimgirl"
+echo "developed by @kymadogg"
 
 sudo -v
 while true; do sudo -n true; sleep 60; done 2>/dev/null &

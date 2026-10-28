@@ -62,7 +62,7 @@ cat << "EOF"
                 |_|_| |_|_|
 EOF
 echo "Welcome to TurtleBoot ROS+OPENCR!"
-echo "developed by @kmhswimgirl"
+echo "developed by @kymadogg"
 # confirm args before entering password
 echo "ROS_DOMAIN_ID: $ROS_ID, Swapfile: $SWAPFILE, LiDAR Type: $LIDAR, OPEN CR Setup: $OPENCR"
 
@@ -166,8 +166,10 @@ sudo udevadm trigger
 grep -qxF "export ROS_DOMAIN_ID=$ROS_ID #TURTLEBOT3" ~/.bashrc || echo "export ROS_DOMAIN_ID=$ROS_ID #TURTLEBOT3" >> ~/.bashrc
 grep -qxF "export LDS_MODEL=LDS-0$LIDAR # lidar config" ~/.bashrc || echo "export LDS_MODEL=LDS-0$LIDAR # lidar config" >> ~/.bashrc
 grep -qxF "export TURTLEBOT3_MODEL=$MODEL # model" ~/.bashrc || echo "export TURTLEBOT3_MODEL=$MODEL # model" >> ~/.bashrc
-grep -qxF "export RMW_IMPLEMENTATION='rmw_cyclonedds_cpp' # switch to cyclone dds" ~/.bashrc || echo "export RMW_IMPLEMENTATION='rmw_cyclonedds_cpp' # switch to cyclone dds" >> ~/.bashrc
+grep -qxF "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp # switch to cyclone dds" ~/.bashrc || echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp # switch to cyclone dds" >> ~/.bashrc
 
+# networking tools
+sudo apt install -y network-tools net-tools 
 
 # OPEN CR Section
 if [ "$OPENCR" = true ]; then
