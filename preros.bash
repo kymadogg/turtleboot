@@ -19,7 +19,7 @@ cat << "EOF"
                 |_|_| |_|_|
 EOF
 echo "Welcome to TurtleBoot pre-ros!"
-echo "developed by @kmhswimgirl"
+echo "developed by @kymadogg"
 
 # ask for sudo permisison
 sudo -v
